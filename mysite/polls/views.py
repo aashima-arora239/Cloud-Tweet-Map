@@ -4,11 +4,9 @@ from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 
 host = "search-jask-tweetmap-hhk4izgywmbpwob2zah4fcdiry.us-west-2.es.amazonaws.com"
-awsauth = AWS4Auth('AKIAJ7HHWCEARYQMB63Q', 'oRVKo5yx0ceUk9SmYLsTkupo84loy2tAM2kO5gNg','us-west-2','es')
 es = Elasticsearch(
         hosts=[{'host': host, 'port': 443}],
         use_ssl=True,
-        http_auth=awsauth,
         verify_certs=True,
         connection_class=RequestsHttpConnection
         )
